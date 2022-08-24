@@ -1,0 +1,27 @@
+.menu-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 100px;
+  height: 120px;
+  background-color: white;
+}
+.menu-filters img {
+  height: 100px;
+}
+.menu-filters form {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: solid black 1px; */
+  height: 100%;
+  width: 80%;
+}
+.search {
+  width: 50vw;
+  height: 30px;
+}
+label {
+  margin: 10px;
+}
