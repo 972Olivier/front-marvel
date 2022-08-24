@@ -1,4 +1,10 @@
 .box-comics {
-  background-color: blue;
+  background-color: black;
+}
+.article-comics {
+  height: 430px;
+  overflow-y: scroll;
+}
+.article-comics img {
   height: 300px;
 }

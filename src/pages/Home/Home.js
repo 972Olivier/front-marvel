@@ -12,11 +12,6 @@ const Home = () => {
 
   useEffect(() => {
     const fetchdata = async () => {
-      // let filter = "";
-      // if (search) {
-      //   filter = `title=${search}`;
-      // }
-
       try {
         const response = await axios.get(
           `http://localhost:3001/characters?title=${search}&skip=${skip}&limit=${limit}`
