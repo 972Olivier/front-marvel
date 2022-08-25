@@ -16,9 +16,8 @@ article {
   padding: 10px;
   box-sizing: border-box;
   margin: 5px;
-  font-family: "Bangers", cursive;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
-  overflow-y: scroll;
 }
 .home {
   width: 300px;
@@ -35,6 +34,7 @@ article img {
 }
 article span {
   font-size: 20px;
+  font-family: "Bangers", cursive;
 }
 
 article p {

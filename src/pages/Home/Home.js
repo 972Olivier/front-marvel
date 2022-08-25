@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Home.css";
 import Filters from "../../components/Filters/Filters";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState("");
@@ -43,21 +44,32 @@ const Home = () => {
         {data.results.map((element) => {
           console.log(element);
           return (
-            <article>
-              <div>
-                <img
-                  src={
-                    element.thumbnail.path + "." + element.thumbnail.extension
-                  }
-                  alt="Personnage"
-                />
-              </div>
-              <div>
-                <div className="home">
-                  <span>{element.name}</span> <p>{element.description}</p>
+            <Link
+              to="/character"
+              state={{
+                data: element,
+                picture:
+                  element.thumbnail.path + "." + element.thumbnail.extension,
+                name: element.name,
+                description: element.description,
+              }}
+            >
+              <article>
+                <div>
+                  <img
+                    src={
+                      element.thumbnail.path + "." + element.thumbnail.extension
+                    }
+                    alt="Personnage"
+                  />
                 </div>
-              </div>
-            </article>
+                <div>
+                  <div className="home">
+                    <span>{element.name}</span> <p>{element.description}</p>
+                  </div>
+                </div>
+              </article>
+            </Link>
           );
         })}
       </section>

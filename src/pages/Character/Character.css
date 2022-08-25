@@ -1,0 +1,64 @@
+.comicsOfCharacter {
+  background-color: black;
+  padding: 50px;
+}
+.characterDescription {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  margin-bottom: 50px;
+}
+.boxInCharacterDescription {
+  padding: 30px;
+}
+.boxInCharacterDescription > div {
+  margin-bottom: 20px;
+}
+.boxInCharacterDescription span,
+.boxInCharacterDescription p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.boxInCharacterDescription span {
+  font-size: 28px;
+  line-height: 20px;
+  font-family: "Bangers", cursive;
+}
+.boxInCharacterDescription p {
+  font-size: 20px;
+}
+.comicsOflist {
+  padding: 30px;
+  font-size: 28px;
+  color: white;
+}
+.box-img img {
+  border: solid white 2px;
+}
+.comicsOf {
+  display: flex;
+  overflow-x: scroll;
+
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  background-color: black;
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+}
+.comicsOf::-webkit-scrollbar {
+  /*---fait disparaitre le scroll on bouge avec flèches--*/
+  display: none;
+}
+.listComics {
+  width: 100%;
+  justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.listComics span {
+  font-size: 30px;
+}
+.listComics p {
+  font-size: 18px;
+}

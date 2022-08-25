@@ -40,7 +40,7 @@ const Comics = () => {
       />
       <section className="box-comics">
         {data.results.map((element) => {
-          console.log(element);
+          // console.log(element);
           return (
             <article className="article-comics">
               <div>

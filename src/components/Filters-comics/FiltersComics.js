@@ -19,7 +19,7 @@ const FiltersComics = ({
         <div>
           <input
             className="search"
-            placeholder="Rentrez votre recherche"
+            placeholder="Rentrer votre recherche"
             type="search"
             name="search"
             value={search}
