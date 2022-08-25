@@ -52,7 +52,7 @@ const Comics = () => {
                 />
               </div>
               <div>
-                <div>
+                <div className="description">
                   <span>{element.title}</span> <p>{element.description}</p>
                 </div>
               </div>

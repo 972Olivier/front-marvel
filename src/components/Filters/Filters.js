@@ -12,7 +12,7 @@ const Filters = ({ search, setSearch, limit, setLimit, skip, setSkip }) => {
         <div>
           <input
             className="search"
-            placeholder="rentrez votre recherche"
+            placeholder="Rentrez votre recherche"
             type="search"
             name="search"
             value={search}
@@ -22,7 +22,7 @@ const Filters = ({ search, setSearch, limit, setLimit, skip, setSkip }) => {
           />
         </div>
         <div>
-          <label htmlFor="articles">Nombre de fiche par page</label>
+          <label htmlFor="articles">Nombre de fiches par page</label>
           <input
             placeholder="max 100"
             type="text"
@@ -45,6 +45,9 @@ const Filters = ({ search, setSearch, limit, setLimit, skip, setSkip }) => {
           />
         </div>
       </form>
+      <div>
+        <img src={shield} alt="shield captain america" />
+      </div>
     </div>
   );
 };

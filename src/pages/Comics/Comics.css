@@ -2,8 +2,17 @@
   background-color: black;
 }
 .article-comics {
-  height: 430px;
-  overflow-y: scroll;
+  height: 400px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 350px;
+  width: 300px;
+  overflow: hidden;
 }
 .article-comics img {
   height: 300px;

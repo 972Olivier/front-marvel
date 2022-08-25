@@ -10,14 +10,22 @@ article {
   align-items: center;
   justify-content: center;
   height: 330px;
-  width: 500px;
-  border: solid black 1px;
+  width: 550px;
+  /* border: solid black 1px; */
   background-color: red;
   padding: 10px;
   box-sizing: border-box;
   margin: 5px;
   font-family: "Bangers", cursive;
   color: white;
+  overflow-y: scroll;
+}
+.home {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 article img {
   width: 200px;
@@ -30,5 +38,5 @@ article span {
 }
 
 article p {
-  margin-top: 5px;
+  margin-top: 10px;
 }

@@ -19,7 +19,7 @@ const FiltersComics = ({
         <div>
           <input
             className="search"
-            placeholder="rentrez votre recherche"
+            placeholder="Rentrez votre recherche"
             type="search"
             name="search"
             value={search}
@@ -29,7 +29,7 @@ const FiltersComics = ({
           />
         </div>
         <div>
-          <label htmlFor="articles">Nombre de fiche par page</label>
+          <label htmlFor="articles">Nombre de fiches par page</label>
           <input
             placeholder="max 100"
             type="text"
@@ -52,6 +52,9 @@ const FiltersComics = ({
           />
         </div>
       </form>
+      <div>
+        <img src={shield} alt="shield captain america" />
+      </div>
     </div>
   );
 };
