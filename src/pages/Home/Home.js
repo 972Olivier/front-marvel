@@ -15,7 +15,7 @@ const Home = () => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/characters?title=${search}&skip=${skip}&limit=${limit}`
+          `https://my-back-marvel.herokuapp.com/characters?title=${search}&skip=${skip}&limit=${limit}`
         );
         // console.log(response.data);
         setData(response.data);
@@ -41,7 +41,7 @@ const Home = () => {
         setLimit={setLimit}
       />
       <section>
-        {data.results.map((element) => {
+        {data.results.map((element, index) => {
           // console.log(element);
           return (
             <Link
@@ -54,7 +54,7 @@ const Home = () => {
                 description: element.description,
               }}
             >
-              <article>
+              <article key={index}>
                 <div>
                   <img
                     src={

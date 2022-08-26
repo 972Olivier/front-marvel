@@ -10,47 +10,16 @@ import { useState } from "react";
 import OneComics from "./pages/OneComics/OneComics";
 
 function App() {
-  //to manage token character and token comics in favorite
+  //to manage cookies character and cookies comics in favorite
   const [addCharacter, setAddCharacter] = useState([]);
   const [addComics, setAddComics] = useState([]);
-  // const [data, setData] = useState("");
-  // const [isLoading, setIsloading] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchdata = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3001/characters");
-  //       console.log(response.data);
-  //       setData(response.data);
-  //       setIsloading(false);
-  //     } catch (error) {
-  //       console.log(error.response);
-  //     }
-  //   };
-  //   fetchdata();
-  // }, []);
-  // return isLoading ? (
-  //   <span>En cours de chargement...</span>
-  // ) :
   return (
     <div className="App">
       <Router>
-        <Header
-          addCharacter={addCharacter}
-          setAddCharacter={setAddCharacter}
-          addComics={addComics}
-          setAddComics={setAddComics}
-        />
+        <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                setAddCharacter={setAddCharacter}
-                addCharacter={addCharacter}
-              />
-            }
-          />
+          <Route path="/" element={<Home />} />
 
           <Route
             path="/character"
@@ -61,12 +30,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/comics"
-            element={
-              <Comics addComics={addComics} setAddComics={setAddComics} />
-            }
-          />
+          <Route path="/comics" element={<Comics />} />
           <Route
             path="/comics/OneComics"
             element={
@@ -74,17 +38,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/favoris"
-            element={
-              <Favoris
-                setAddCharacter={setAddCharacter}
-                setAddComics={setAddComics}
-                addComics={addComics}
-                addCharacter={addCharacter}
-              />
-            }
-          />
+          <Route path="/favoris" element={<Favoris />} />
         </Routes>
       </Router>
     </div>

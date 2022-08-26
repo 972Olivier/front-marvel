@@ -15,7 +15,7 @@ const Comics = () => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/comics?title=${search}&skip=${skip}&limit=${limit}`
+          `https://my-back-marvel.herokuapp.com/comics?title=${search}&skip=${skip}&limit=${limit}`
         );
         // console.log(response.data);
         setData(response.data);
@@ -41,7 +41,7 @@ const Comics = () => {
         setLimit={setLimit}
       />
       <section className="box-comics">
-        {data.results.map((element) => {
+        {data.results.map((element, index) => {
           // console.log("element=>", element);
           return (
             <Link
@@ -54,7 +54,7 @@ const Comics = () => {
                 title: element.title,
               }}
             >
-              <article className="article-comics">
+              <article className="article-comics" key={index}>
                 <div>
                   <img
                     src={

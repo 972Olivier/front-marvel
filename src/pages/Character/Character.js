@@ -4,8 +4,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Character = ({ setAddCharacter, addCharacter }) => {
+  const navigate = useNavigate();
   const [ComicsData, setComicsData] = useState("");
   const [isLoading, setIsloading] = useState(true);
   const location = useLocation();
@@ -23,7 +25,9 @@ const Character = ({ setAddCharacter, addCharacter }) => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/comics/${id}`);
+        const response = await axios.get(
+          `https://my-back-marvel.herokuapp.com/comics/${id}`
+        );
         // console.log(response.data);
         setComicsData(response.data);
         setIsloading(false);
@@ -56,7 +60,7 @@ const Character = ({ setAddCharacter, addCharacter }) => {
                 description,
                 id,
               };
-              console.log("😉", characterFav);
+              // console.log("😉", characterFav);
               // if cookies exist
               const cookieExist = Cookies.get("arrayCharacter");
               if (cookieExist) {
@@ -66,7 +70,8 @@ const Character = ({ setAddCharacter, addCharacter }) => {
                 setAddCharacter(copy);
                 let arrayCharacter = JSON.stringify(copy);
                 Cookies.set(`arrayCharacter`, arrayCharacter, { expires: 7 });
-                alert("le personnage est rajouté aux favoris");
+                alert("Ce personnage a été rajouté aux favoris");
+                navigate("/");
               } else {
                 // if cookies doesn't exist
                 let copy = addCharacter;
@@ -75,7 +80,8 @@ const Character = ({ setAddCharacter, addCharacter }) => {
                 setAddCharacter(copy);
                 let arrayCharacter = JSON.stringify(copy);
                 Cookies.set(`arrayCharacter`, arrayCharacter, { expires: 7 });
-                alert("le personnage est rajouté aux favoris");
+                alert("Ce personnage a été rajouté aux favoris");
+                navigate("/");
               }
             }}
           >

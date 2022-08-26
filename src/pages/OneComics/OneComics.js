@@ -1,13 +1,12 @@
 import "./OneComics.css";
 import { useLocation } from "react-router-dom";
-// import axios from "axios";
-// import { useState } from "react";
-// import { useEffect } from "react";
+
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const OneComics = ({ addComics, setAddComics }) => {
-  // const [ComicsData, setComicsData] = useState("");
-  // const [isLoading, setIsloading] = useState(true);
+  const navigate = useNavigate();
+
   const location = useLocation();
 
   const id = location.state.id;
@@ -15,7 +14,7 @@ const OneComics = ({ addComics, setAddComics }) => {
   const title = location.state.title;
   const description = location.state.description;
 
-  console.log(id, picture, title, description);
+  // console.log(id, picture, title, description);
 
   return (
     <section className="One">
@@ -47,7 +46,8 @@ const OneComics = ({ addComics, setAddComics }) => {
                   setAddComics(copy);
                   let arrayComics = JSON.stringify(copy);
                   Cookies.set(`arrayComics`, arrayComics, { expires: 7 });
-                  alert("le comics est rajouté aux favoris");
+                  alert("Ce comics a été rajouté aux favoris");
+                  navigate("/comics");
                 } else {
                   let copy = addComics;
                   copy.push(comicsFav);
@@ -55,7 +55,8 @@ const OneComics = ({ addComics, setAddComics }) => {
                   setAddComics(copy);
                   let arrayComics = JSON.stringify(copy);
                   Cookies.set(`arrayComics`, arrayComics, { expires: 7 });
-                  alert("le comics est rajouté aux favoris");
+                  alert("Ce comics a été rajouté aux favoris");
+                  navigate("/comics");
                 }
               }}
             >

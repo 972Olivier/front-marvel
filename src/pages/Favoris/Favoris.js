@@ -17,22 +17,24 @@ const Favoris = () => {
     // console.log("ok=====>", arrayOk);
   }
 
-  // console.log("arrayC=>", arrayComicsOk[0].picture);
-  // if cookies exist
-  // if (array) {
-  // const arrayOk = JSON.parse(array);
-  // console.log("ok=====>", arrayOk);
   return (
     <section className="box-favoris">
       {array ? (
         <div>
           <p>Personnage(s) favori(s)</p>
-          <button className="favorisAdd">Delete</button>
+          <button
+            onClick={() => {
+              Cookies.remove("arrayCharacter");
+            }}
+            className="favorisAdd"
+          >
+            Delete
+          </button>
           <article className="favoriteCharacter">
-            {arrayOk.map((element) => {
+            {arrayOk.map((element, index) => {
               // console.log("element=>", element);
               return (
-                <div className="box">
+                <div className="box" key={index}>
                   <div>
                     <img src={element.picture} alt="character" />
                   </div>
@@ -48,7 +50,14 @@ const Favoris = () => {
       ) : (
         <div>
           <p>Personnage(s) favori(s)</p>
-          <button className="favorisAdd">Delete</button>
+          <button
+            onClick={() => {
+              Cookies.remove("arrayCharacter");
+            }}
+            className="favorisAdd"
+          >
+            Delete
+          </button>
           <article className="favoriteCharacter"></article>
         </div>
       )}
@@ -56,12 +65,19 @@ const Favoris = () => {
       {arrayComics ? (
         <div>
           <p>Comics favori(s)</p>
-          <button className="favorisAdd">Delete</button>
+          <button
+            onClick={() => {
+              Cookies.remove("arrayComics");
+            }}
+            className="favorisAdd"
+          >
+            Delete
+          </button>
           <article className="favoriteComics">
-            {arrayComicsOk.map((element) => {
+            {arrayComicsOk.map((element, index) => {
               // console.log("element=>", element);
               return (
-                <div className="box">
+                <div className="box" key={index}>
                   <div>
                     <img src={element.picture} alt="character" />
                   </div>
@@ -77,28 +93,19 @@ const Favoris = () => {
       ) : (
         <div>
           <p>Comics favori(s)</p>
-          <button className="favorisAdd">Delete</button>
+          <button
+            onClick={() => {
+              Cookies.remove("arrayComics");
+            }}
+            className="favorisAdd"
+          >
+            Delete
+          </button>
           <article className="favoriteComics"></article>
         </div>
       )}
     </section>
   );
-  // }
-  // else {
-  //   //if cookies doesn't exist
-  //   return (
-  //     <section className="box-favoris">
-  // <div>
-  //   <p>Personnage(s) favori(s)</p>
-  //   <article className="favoriteCharacter"></article>
-  // </div>
-  //       <div>
-  //         <p>Comics favori(s)</p>
-  //         <article className="favoriteComics"></article>
-  //       </div>
-  //     </section>
-  //   );
-  // }
 };
 
 export default Favoris;
