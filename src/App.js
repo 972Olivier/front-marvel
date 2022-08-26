@@ -7,6 +7,7 @@ import Character from "./pages/Character/Character";
 import Comics from "./pages/Comics/Comics";
 import Favoris from "./pages/Favoris/Favoris";
 import { useState } from "react";
+import OneComics from "./pages/OneComics/OneComics";
 
 function App() {
   //to manage token character and token comics in favorite
@@ -50,6 +51,7 @@ function App() {
               />
             }
           />
+
           <Route
             path="/character"
             element={
@@ -65,6 +67,13 @@ function App() {
               <Comics addComics={addComics} setAddComics={setAddComics} />
             }
           />
+          <Route
+            path="/comics/OneComics"
+            element={
+              <OneComics addComics={addComics} setAddComics={setAddComics} />
+            }
+          />
+
           <Route
             path="/favoris"
             element={

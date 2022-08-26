@@ -37,6 +37,11 @@
   /*---fait disparaitre le scroll on bouge avec flèches--*/
   display: none;
 }
+.favoriteComics::-webkit-scrollbar {
+  /*---fait disparaitre le scroll on bouge avec flèches--*/
+  display: none;
+}
+
 .box {
   display: flex;
   align-items: center;

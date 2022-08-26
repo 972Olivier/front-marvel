@@ -18,7 +18,7 @@ const Character = ({ setAddCharacter, addCharacter }) => {
 
   // console.log(picture, name, description, id);
   // console.log("comics data ===>", ComicsData.comics);
-  console.log(addCharacter);
+  // console.log(addCharacter);
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -57,6 +57,7 @@ const Character = ({ setAddCharacter, addCharacter }) => {
                 id,
               };
               console.log("😉", characterFav);
+              // if cookies exist
               const cookieExist = Cookies.get("arrayCharacter");
               if (cookieExist) {
                 const cookie = JSON.parse(cookieExist);
@@ -65,13 +66,16 @@ const Character = ({ setAddCharacter, addCharacter }) => {
                 setAddCharacter(copy);
                 let arrayCharacter = JSON.stringify(copy);
                 Cookies.set(`arrayCharacter`, arrayCharacter, { expires: 7 });
+                alert("le personnage est rajouté aux favoris");
               } else {
+                // if cookies doesn't exist
                 let copy = addCharacter;
                 copy.push(characterFav);
                 // console.log(copy);
                 setAddCharacter(copy);
                 let arrayCharacter = JSON.stringify(copy);
                 Cookies.set(`arrayCharacter`, arrayCharacter, { expires: 7 });
+                alert("le personnage est rajouté aux favoris");
               }
             }}
           >

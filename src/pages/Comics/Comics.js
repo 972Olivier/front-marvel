@@ -2,6 +2,7 @@ import "./Comics.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FiltersComics from "../../components/Filters-comics/FiltersComics";
+import { Link } from "react-router-dom";
 
 const Comics = () => {
   const [data, setData] = useState("");
@@ -41,23 +42,34 @@ const Comics = () => {
       />
       <section className="box-comics">
         {data.results.map((element) => {
-          // console.log(element);
+          // console.log("element=>", element);
           return (
-            <article className="article-comics">
-              <div>
-                <img
-                  src={
-                    element.thumbnail.path + "." + element.thumbnail.extension
-                  }
-                  alt="Personnage"
-                />
-              </div>
-              <div>
-                <div className="description">
-                  <span>{element.title}</span> <p>{element.description}</p>
+            <Link
+              to="OneComics"
+              state={{
+                id: element._id,
+                picture:
+                  element.thumbnail.path + "." + element.thumbnail.extension,
+                description: element.description,
+                title: element.title,
+              }}
+            >
+              <article className="article-comics">
+                <div>
+                  <img
+                    src={
+                      element.thumbnail.path + "." + element.thumbnail.extension
+                    }
+                    alt="Personnage"
+                  />
                 </div>
-              </div>
-            </article>
+                <div>
+                  <div className="description">
+                    <span>{element.title}</span> <p>{element.description}</p>
+                  </div>
+                </div>
+              </article>
+            </Link>
           );
         })}
       </section>
