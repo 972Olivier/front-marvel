@@ -18,7 +18,9 @@
   justify-content: center;
   flex-direction: column;
 }
-
+.box-favoris button {
+  margin-top: 20px;
+}
 .favoriteCharacter,
 .favoriteComics {
   display: flex;

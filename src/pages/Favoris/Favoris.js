@@ -11,6 +11,7 @@ const Favoris = () => {
       <section className="box-favoris">
         <div>
           <p>Personnage(s) favori(s)</p>
+          <button className="favorisAdd">Delete</button>
           <article className="favoriteCharacter">
             {arrayOk.map((element) => {
               console.log("element=>", element);
@@ -30,6 +31,7 @@ const Favoris = () => {
         </div>
         <div>
           <p>Comics favori(s)</p>
+          <button className="favorisAdd">Delete</button>
           <article className="favoriteComics"></article>
         </div>
       </section>
