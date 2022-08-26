@@ -1,4 +1,51 @@
 .box-favoris {
-  background-color: yellow;
-  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black; */
+
+  color: white;
+  font-family: "Bangers", cursive;
+  font-size: 28px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.box-favoris > div {
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.favoriteCharacter,
+.favoriteComics {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  overflow-x: scroll;
+
+  width: 600px;
+  height: 60vh;
+  margin-top: 20px;
+  border: solid 1px black;
+}
+.favoriteCharacter::-webkit-scrollbar {
+  /*---fait disparaitre le scroll on bouge avec flèches--*/
+  display: none;
+}
+.box {
+  display: flex;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+  border: solid 1px black;
+  padding: 20px;
+}
+.box p {
+  font-size: 18px;
+}
+.box span {
+  font-size: 28px;
 }

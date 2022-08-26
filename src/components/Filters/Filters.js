@@ -2,7 +2,7 @@ import "./Filters.css";
 import shield from "../../assets/shield.png";
 
 const Filters = ({ search, setSearch, limit, setLimit, skip, setSkip }) => {
-  console.log("===>", search, limit, skip);
+  // console.log("===>", search, limit, skip);
   return (
     <div className="menu-filters">
       <div>

@@ -9,13 +9,14 @@ const Comics = () => {
   const [search, setSearch] = useState("");
   const [skip, setSkip] = useState("1");
   const [limit, setLimit] = useState(100);
+
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(
           `http://localhost:3001/comics?title=${search}&skip=${skip}&limit=${limit}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsloading(false);
       } catch (error) {

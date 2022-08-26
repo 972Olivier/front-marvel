@@ -17,7 +17,7 @@ const Home = () => {
         const response = await axios.get(
           `http://localhost:3001/characters?title=${search}&skip=${skip}&limit=${limit}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsloading(false);
       } catch (error) {
@@ -42,7 +42,7 @@ const Home = () => {
       />
       <section>
         {data.results.map((element) => {
-          console.log(element);
+          // console.log(element);
           return (
             <Link
               to="/character"

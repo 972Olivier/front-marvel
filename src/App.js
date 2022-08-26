@@ -6,8 +6,12 @@ import Home from "./pages/Home/Home";
 import Character from "./pages/Character/Character";
 import Comics from "./pages/Comics/Comics";
 import Favoris from "./pages/Favoris/Favoris";
+import { useState } from "react";
 
 function App() {
+  //to manage token character and token comics in favorite
+  const [addCharacter, setAddCharacter] = useState([]);
+  const [addComics, setAddComics] = useState([]);
   // const [data, setData] = useState("");
   // const [isLoading, setIsloading] = useState(true);
 
@@ -30,12 +34,48 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <Header
+          addCharacter={addCharacter}
+          setAddCharacter={setAddCharacter}
+          addComics={addComics}
+          setAddComics={setAddComics}
+        />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/character" element={<Character />} />
-          <Route path="/comics" element={<Comics />} />
-          <Route path="/favoris" element={<Favoris />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                setAddCharacter={setAddCharacter}
+                addCharacter={addCharacter}
+              />
+            }
+          />
+          <Route
+            path="/character"
+            element={
+              <Character
+                addCharacter={addCharacter}
+                setAddCharacter={setAddCharacter}
+              />
+            }
+          />
+          <Route
+            path="/comics"
+            element={
+              <Comics addComics={addComics} setAddComics={setAddComics} />
+            }
+          />
+          <Route
+            path="/favoris"
+            element={
+              <Favoris
+                setAddCharacter={setAddCharacter}
+                setAddComics={setAddComics}
+                addComics={addComics}
+                addCharacter={addCharacter}
+              />
+            }
+          />
         </Routes>
       </Router>
     </div>

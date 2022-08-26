@@ -1,7 +1,8 @@
 import "./Header.css";
 import marvel_logo from "../../assets/marvel_logo.gif";
 import { Link } from "react-router-dom";
-const Header = () => {
+
+const Header = ({ addCharacter, setAddCharacter, addComics, setAddComics }) => {
   return (
     <header>
       <div>

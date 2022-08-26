@@ -9,7 +9,7 @@ const FiltersComics = ({
   skip,
   setSkip,
 }) => {
-  console.log("filterComics===>", search, limit, skip);
+  // console.log("filterComics===>", search, limit, skip);
   return (
     <div className="menu-filters">
       <div>
