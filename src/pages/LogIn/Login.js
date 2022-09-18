@@ -22,7 +22,8 @@ const Login = ({ setToken, token }) => {
         const fetchData = async () => {
           try {
             const response = await axios.post(
-              "http://localhost:3001/signup",
+              "https://my-back-marvel.herokuapp.com/signup",
+              // "http://localhost:3001/signup",
               param
             );
             Cookies.set("userToken", response.data.token, { expires: 7 });
