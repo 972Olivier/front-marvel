@@ -24,6 +24,11 @@ const Header = () => {
             <span>Favoris</span>
           </div>
         </Link>
+        <Link to="/login">
+          <div className="menu">
+            <span>Connexion</span>
+          </div>
+        </Link>
       </nav>
     </header>
   );

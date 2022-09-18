@@ -2,14 +2,20 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Home.css";
 import Filters from "../../components/Filters/Filters";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import groot from "../../assets/groot.gif";
 
-const Home = () => {
+const Home = ({ userToken }) => {
+  const navigate = useNavigate();
   const [data, setData] = useState("");
   const [isLoading, setIsloading] = useState(true);
   const [search, setSearch] = useState("");
   const [skip, setSkip] = useState("1");
   const [limit, setLimit] = useState(100);
+
+  if (!userToken) {
+    navigate("/login");
+  }
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -29,7 +35,12 @@ const Home = () => {
 
   // console.log(data.results);
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <div className="isLoading">
+      <div>
+        <img src={groot} alt="Groot" />
+      </div>
+      {/* <span>En cours de chargement...</span> */}
+    </div>
   ) : (
     <>
       <Filters

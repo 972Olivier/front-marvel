@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-const Character = ({ setAddCharacter, addCharacter }) => {
+const Character = ({ setAddCharacter, addCharacter, userToken }) => {
   const navigate = useNavigate();
   const [ComicsData, setComicsData] = useState("");
   const [isLoading, setIsloading] = useState(true);
@@ -17,6 +17,10 @@ const Character = ({ setAddCharacter, addCharacter }) => {
   const name = location.state.name;
   const description = location.state.description;
   const id = data._id;
+
+  if (!userToken) {
+    navigate("/login");
+  }
 
   // console.log(picture, name, description, id);
   // console.log("comics data ===>", ComicsData.comics);

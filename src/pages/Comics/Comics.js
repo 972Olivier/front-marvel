@@ -2,14 +2,20 @@ import "./Comics.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FiltersComics from "../../components/Filters-comics/FiltersComics";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import groot from "../../assets/groot.gif";
 
-const Comics = () => {
+const Comics = ({ userToken }) => {
   const [data, setData] = useState("");
   const [isLoading, setIsloading] = useState(true);
   const [search, setSearch] = useState("");
   const [skip, setSkip] = useState("1");
   const [limit, setLimit] = useState(100);
+  const navigate = useNavigate();
+
+  if (!userToken) {
+    navigate("/login");
+  }
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -29,7 +35,12 @@ const Comics = () => {
 
   // console.log(data.results);
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <div className="isLoading">
+      <div>
+        <img src={groot} alt="Groot" />
+      </div>
+      {/* <span>En cours de chargement...</span> */}
+    </div>
   ) : (
     <>
       <FiltersComics

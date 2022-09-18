@@ -1,12 +1,17 @@
 import Cookies from "js-cookie";
 import "./Favoris.css";
-// import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Favoris = () => {
+const Favoris = ({ userToken }) => {
+  const navigate = useNavigate();
   const array = Cookies.get("arrayCharacter");
   let arrayOk = {};
   const arrayComics = Cookies.get("arrayComics");
   let arrayComicsOk = {};
+
+  if (!userToken) {
+    navigate("/login");
+  }
 
   if (arrayComics) {
     arrayComicsOk = JSON.parse(arrayComics);

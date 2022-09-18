@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-const OneComics = ({ addComics, setAddComics }) => {
+const OneComics = ({ addComics, setAddComics, userToken }) => {
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -15,6 +15,9 @@ const OneComics = ({ addComics, setAddComics }) => {
   const description = location.state.description;
 
   // console.log(id, picture, title, description);
+  if (!userToken) {
+    navigate("/login");
+  }
 
   return (
     <section className="One">

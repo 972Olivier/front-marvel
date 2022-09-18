@@ -1,0 +1,27 @@
+.login {
+  background-color: black;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 400px;
+  height: 400px;
+  padding: 50px;
+  box-sizing: border-box;
+
+  background-color: red;
+}
+.containSignIn {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signIn {
+  color: white;
+}
