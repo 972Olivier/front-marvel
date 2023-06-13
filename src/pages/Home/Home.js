@@ -21,7 +21,7 @@ const Home = ({ userToken }) => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(
-          `https://my-back-marvel.herokuapp.com/characters?title=${search}&skip=${skip}&limit=${limit}`
+          `https://back-marvel.onrender.com/characters?title=${search}&skip=${skip}&limit=${limit}`
         );
         // console.log(response.data);
         setData(response.data);

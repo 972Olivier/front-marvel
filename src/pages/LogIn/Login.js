@@ -22,7 +22,7 @@ const Login = ({ setToken, token }) => {
         const fetchData = async () => {
           try {
             const response = await axios.post(
-              "https://my-back-marvel.herokuapp.com/signup",
+              "https://back-marvel.onrender.com/signup",
               // "http://localhost:3001/signup",
               param
             );

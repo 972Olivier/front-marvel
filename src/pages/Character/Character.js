@@ -30,7 +30,7 @@ const Character = ({ setAddCharacter, addCharacter, userToken }) => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(
-          `https://my-back-marvel.herokuapp.com/comics/${id}`
+          `https://back-marvel.onrender.com/comics/${id}`
         );
         // console.log(response.data);
         setComicsData(response.data);
